@@ -1,6 +1,6 @@
 name: arabic2roman
 
-on: [push]
+on: [commit]
 
 jobs:
   build:
