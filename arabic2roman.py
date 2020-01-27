@@ -2,7 +2,7 @@
 '''
 Convert an arabic number to a roman numeral
 
-Usage: 
+Usage:
 >> converter = ArabicRomanConverter() # Instantiate class
 >> roman     = converter('12')        # Convert an arabic string
 -- XII
