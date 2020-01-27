@@ -7,7 +7,9 @@ from arabic2roman import ArabicRomanConverter
 def test_arabic2roman():
     '''
     Order of test cases:
-      1: Exact matches
+      1: Exact matches (simple)
+        a: String data type
+        b: Numerical data type
       2: Various inexact matches
         a: Round up
         b: Round down
@@ -19,12 +21,14 @@ def test_arabic2roman():
     '''
 
     test_cases = ['5', '10', '50', '100', '500', '1000',        \
+                   51,   10,   50,   100,   500,   1000,         \
                  '3', '17', '75', '249', '520', '1235',         \
                  '0', '-1', '1.2', '10000.2', '', '-10000',     \
                  'abc', 'a12', '/21', '_', '1241+', '-',        \
                  ' 1 ', '  5  ', '    5   ']
 
     truth_vals = ['V', 'X', 'L', 'C', 'D', 'M',                         \
+                  'V', 'X', 'L', 'C', 'D', 'M'
                  'III', 'XVII', 'LXXV', 'CCXLIX', 'DXX', 'MCCXXXV'] +   \
                  ['invalid input' for i in range(2*6)] +                \
                  ['I', 'V', 'V']

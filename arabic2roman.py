@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 '''
 Convert an arabic number to a roman numeral
+
+Usage: 
+>> converter = ArabicRomanConverter() # Instantiate class
+>> roman     = converter('12')        # Convert an arabic string
 '''
 
 from sys import stderr
@@ -88,50 +92,9 @@ class ArabicRomanConverter:
             roman2add = max([romans for romans in test_nums if num >= romans])
             roman_string.append(num_map[roman2add])
             num = num - roman2add
-        # def nextAdd(num):
-        #     roman2add = max([romans for romans in testNums if num >= romans])
-        #     romanString.append(num_map[roman2add])
-        #     num = num - roman2add
-        # def nextSubtr(num):
+
         self.roman_string = roman_string
         return ''.join(roman_string)
-
-    def test_arabic2roman(self):
-        '''
-        Order of test cases:
-          1: Exact matches
-          2: Various inexact matches
-            a: Round up
-            b: Round down
-          3: Invalid entries
-            a: Less than 1 and decimals
-            b: Numbers containing strings
-          4: Edge cases that should succeed
-            a: Currently focusing on whitespace in the input
-        '''
-
-        test_cases = ['5', '10', '50', '100', '500', '1000',        \
-                     '3', '17', '75', '249', '520', '1235',         \
-                     '0', '-1', '1.2', '10000.2', '', '-10000',     \
-                     'abc', 'a12', '/21', '_', '1241+', '-',        \
-                     ' 1 ', '  5  ', '    5   ']
-
-        truth_vals = ['V', 'X', 'L', 'C', 'D', 'M',                         \
-                     'III', 'XVII', 'LXXV', 'CCXLIX', 'DXX', 'MCCXXXV'] +   \
-                     ['invalid input' for i in range(2*6)] +                \
-                     ['I', 'V', 'V']
-
-        truth_dict = {test_cases[i]:truth_vals[i] for i in range(len(test_cases))}
-        for test_str in test_cases:
-            try:
-                result = self.check_arabic(test_str)
-                assert (result == truth_dict[test_str]),    \
-                      f'Failed test: {test_str}\n'+         \
-                      f'  Result: {result}\n'      +        \
-                      f'  Truth:  {truth_dict[test_str]}\n'
-            except AssertionError as error:
-                print(error)
-
 
     def __init__(self, input_string):
         '''
