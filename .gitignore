@@ -1,2 +1,2 @@
-old/*
-
+old/*     # Place to keep old files locally
+std*.txt  # Redirect standard outputs for debugging purposes
