@@ -1,0 +1,12 @@
+Invalid input (0) -- less than zero
+Invalid input (-1) -- less than zero
+Invalid input (1.2) -- contains fraction
+Invalid input (10000.2) -- contains fraction
+Invalid input () -- cannot make double
+Invalid input (-10000) -- less than zero
+Invalid input (abc) -- cannot make double
+Invalid input (a12) -- cannot make double
+Invalid input (/21) -- cannot make double
+Invalid input (_) -- cannot make double
+Invalid input (1241+) -- cannot make double
+Invalid input (-) -- cannot make double
