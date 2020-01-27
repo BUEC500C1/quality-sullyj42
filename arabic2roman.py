@@ -5,6 +5,11 @@ Convert an arabic number to a roman numeral
 Usage: 
 >> converter = ArabicRomanConverter() # Instantiate class
 >> roman     = converter('12')        # Convert an arabic string
+-- XII
+>> roman     = converter(12)          # Convert any valid numeric type
+-- XII
+
+Valid types are integers greater than 0
 '''
 
 from sys import stderr
@@ -20,7 +25,7 @@ class ArabicRomanConverter:
 
     def check_arabic(self, arabic_str):
         '''
-        This is the first of a waterfall of functions
+        This is the first of a waterfall of functions to convert
 
         This checks if an input is valid.
         -- If valid, calls the next function to convert the roman numeral
@@ -86,7 +91,7 @@ class ArabicRomanConverter:
                  500: 'D',  \
                  900: 'CM', \
                 1000: 'M'}
-        test_nums = list(num_map.keys())
+        test_nums = list(num_map.keys())  # Pulls the arabic numbers
         test_nums.sort()
         while num > 0:
             roman2add = max([romans for romans in test_nums if num >= romans])

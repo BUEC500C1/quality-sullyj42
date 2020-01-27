@@ -21,7 +21,7 @@ def test_arabic2roman():
     '''
 
     test_cases = ['5', '10', '50', '100', '500', '1000',        \
-                   5,   10,   50,   100,   500,   1000,        \
+                   5,   10,   50,   100,   500,   1000,         \
                  '3', '17', '75', '249', '520', '1235',         \
                  '0', '-1', '1.2', '10000.2', '', '-10000',     \
                  'abc', 'a12', '/21', '_', '1241+', '-',        \
@@ -34,9 +34,9 @@ def test_arabic2roman():
                  ['I', 'V', 'V']
 
     truth_dict = {test_cases[i]:truth_vals[i] for i in range(len(test_cases))}
+
+    converter = ArabicRomanConverter(test_str)
     for test_str in test_cases:
-        # try:
-        converter = ArabicRomanConverter(test_str)
         result = converter.check_arabic(test_str)
         assert (result == truth_dict[test_str]),    \
               f'Failed test: {test_str}\n'+         \
