@@ -1,3 +1,0 @@
-def makeValueError():
-  raise ValueError;
-

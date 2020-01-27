@@ -1,3 +1,7 @@
+'''
+This module provides a set of tests to run over a roman numeral converter
+'''
+
 from arabic2roman import ArabicRomanConverter
 
 def test_arabic2roman():
@@ -29,7 +33,7 @@ def test_arabic2roman():
     for test_str in test_cases:
         # try:
         converter = ArabicRomanConverter(test_str)
-        result    = converter.check_arabic(test_str)
+        result = converter.check_arabic(test_str)
         assert (result == truth_dict[test_str]),    \
               f'Failed test: {test_str}\n'+         \
               f'  Result: {result}\n'      +        \
