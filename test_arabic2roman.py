@@ -28,7 +28,8 @@ def test_arabic2roman():
     truth_dict = {test_cases[i]:truth_vals[i] for i in range(len(test_cases))}
     for test_str in test_cases:
         # try:
-        result = ArabicRomanConverter.check_arabic(test_str)
+        converter = ArabicRomanConverter(test_str)
+        result    = converter.check_arabic(test_str)
         assert (result == truth_dict[test_str]),    \
               f'Failed test: {test_str}\n'+         \
               f'  Result: {result}\n'      +        \

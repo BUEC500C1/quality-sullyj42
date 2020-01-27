@@ -12,6 +12,8 @@ class ArabicRomanConverter:
     arab_string = str()
     arab_num = int()
     roman_string = str()
+
+
     def check_arabic(self, arabic_str):
         '''
         This is the first of a waterfall of functions
@@ -25,8 +27,8 @@ class ArabicRomanConverter:
             num = float(arabic_str)
 
         except ValueError:
-            if len(arabic_str) == 0:
-                print(f'Invalid input -- no input provided', file = stderr)
+            if arabic_str == "":
+                print(f'Invalid input -- no input provided', file=stderr)
                 return 'invalid input'
 
             print(f'Invalid input ({arabic_str}) -- cannot make double', file=stderr)
@@ -131,9 +133,9 @@ class ArabicRomanConverter:
                 print(error)
 
 
-    def __init__(self):
-        print('Running test cases: ')
-        self.test_arabic2roman()
-        print('x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x\nTesting over')
-
+    def __init__(self, input_string):
+        '''
+        This is a constructor accepting a single string input
+        '''
+        self.arab_string = input_string
 # ArabicRomanConverter()
