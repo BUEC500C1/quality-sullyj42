@@ -1,6 +1,8 @@
 '''
 This module provides a set of tests to run over a roman numeral converter
 '''
+import pytest
+import unittest
 
 from arabic2roman import ArabicRomanConverter
 
@@ -34,12 +36,23 @@ def test_arabic2roman():
                  ['I', 'V', 'V']
 
     truth_dict = {test_cases[i]:truth_vals[i] for i in range(len(test_cases))}
-
+    results = []
     converter = ArabicRomanConverter('')
     for test_str in test_cases:
         result = converter.check_arabic(test_str)
-        assert (result == truth_dict[test_str]),    \
-              f'Failed test: {test_str}\n'+         \
-              f'  Result: {result}\n'      +        \
-              f'  Truth:  {truth_dict[test_str]}\n'
+        results.append(result)
+    #     assert (result == truth_dict[test_str]),    \
+    #           f'Failed test: {test_str}\n'+         \
+    #           f'  Result: {result}\n'      +        \
+    #           f'  Truth:  {truth_dict[test_str]}\n'
+    # print(*results, sep = '\n')
+    # print('')
+    # print(*truth_vals, sep = '\n')
 
+    # truth_eval = []
+    # for index in range(len(results)):
+    #   truth_eval.append(results[index] == truth_vals[index])
+    # print(*truth_eval, sep = '\n')
+    # print('')
+    unittest.TestCase().assertListEqual(truth_vals, results)
+# test_arabic2roman()

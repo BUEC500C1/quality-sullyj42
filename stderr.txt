@@ -1,0 +1,18 @@
+Invalid input (0) -- less than zero
+Invalid input (-1) -- less than zero
+Invalid input (1.2) -- contains fraction
+Invalid input (10000.2) -- contains fraction
+Invalid input -- no input provided
+Invalid input (-10000) -- less than zero
+Invalid input (abc) -- cannot make double
+Invalid input (a12) -- cannot make double
+Invalid input (/21) -- cannot make double
+Invalid input (_) -- cannot make double
+Invalid input (1241+) -- cannot make double
+Invalid input (-) -- cannot make double
+Traceback (most recent call last):
+  File "test_arabic2roman.py", line 58, in <module>
+    test_arabic2roman()
+  File "test_arabic2roman.py", line 57, in test_arabic2roman
+    unittest.TestCase().assertSequenceEqual(truth_vals, results)
+NameError: name 'unittest' is not defined
